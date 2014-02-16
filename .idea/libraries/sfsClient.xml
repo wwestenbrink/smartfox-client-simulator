@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sfsClient">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/vendor/sfsClient" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/vendor/sfsClient" recursive="false" />
+  </library>
+</component>
