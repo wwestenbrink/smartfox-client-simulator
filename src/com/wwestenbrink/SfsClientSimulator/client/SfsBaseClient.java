@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.util.HashMap;
 
 public abstract class SfsBaseClient implements Runnable, IEventListener {
-    protected static String serverHost = "127.0.0.1";
+    protected static String serverHost = "local-smartfox.crowdpark-cloud.com";
     protected static String zone = "BasicExamples";
 
     private int id;

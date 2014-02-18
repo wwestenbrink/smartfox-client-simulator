@@ -1,8 +1,8 @@
 package com.wwestenbrink.SfsClientSimulator.ui;
 
+import com.wwestenbrink.SfsClientSimulator.client.SfsBaseClient;
 import com.wwestenbrink.SfsClientSimulator.client.SfsTestClient;
 import com.wwestenbrink.SfsClientSimulator.client.SfsWarmupClient;
-import com.wwestenbrink.SfsClientSimulator.client.SfsBaseClient;
 import com.wwestenbrink.SfsClientSimulator.model.ClientModel;
 
 import javax.swing.*;
@@ -30,6 +30,7 @@ public class MainDialog extends JDialog implements TableModelListener {
     private JButton spawnClientsButton;
     private JTable clientTable;
     private JLabel statusLabel;
+    private JButton warmpupButton;
     private int clientsLoggedin;
 
     public MainDialog() {
@@ -78,10 +79,15 @@ public class MainDialog extends JDialog implements TableModelListener {
             }
         });
 
-        SfsBaseClient client = new SfsWarmupClient();
-        client.setLogger(logTextArea);
-        Thread thread = new Thread(client);
-        thread.start();
+        warmpupButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SfsBaseClient client = new SfsWarmupClient();
+                client.setLogger(logTextArea);
+                Thread thread = new Thread(client);
+                thread.start();
+            }
+        });
     }
 
     public static void main(String[] args) {
